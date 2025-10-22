@@ -1,4 +1,4 @@
-package com.example.template_code
+package com.example.DoctorYa
 
 import org.junit.Test
 

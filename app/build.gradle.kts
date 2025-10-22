@@ -5,11 +5,17 @@ plugins {
     //custom
     alias(libs.plugins.kotlin.serialization)
     //alias(libs.plugins.google.services)
+    //hilt
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 
 }
 
+
+
+
 android {
-    namespace = "com.example.template_code"
+    namespace = "com.example.DoctorYa"
     compileSdk = 36
 
     defaultConfig {
@@ -41,6 +47,12 @@ android {
     buildFeatures {
         compose = true
     }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1,LICENSE.md,LICENSE-notice.md,LICENSE.txt}"
+        }
+    }
+
 }
 
 dependencies {
@@ -53,7 +65,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.junit.junit)
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -83,4 +97,31 @@ dependencies {
 
     // Data Store
     implementation(libs.androidx.datastore.preferences)
+
+    // hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation)
+    //Room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+
+    // Si usas Paging 3 con Room
+    implementation(libs.room.paging)
+
+    // KSP  para el compilador
+    ksp(libs.room.compiler)
+
+    //Testing
+    implementation(libs.mockk)
+    implementation(libs.kotlin.coroutines)
+    implementation(libs.turbine)
+    testImplementation(libs.assertj)
+
+
+     //nav3
+    implementation(libs.nav3.runtime)
+    implementation(libs.nav3.ui)
+    implementation(libs.lifecycle.viewmodel.navigation3)
+    implementation(libs.kotlinx.serialization.core)
 }

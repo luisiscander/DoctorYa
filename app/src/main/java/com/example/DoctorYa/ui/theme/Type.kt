@@ -1,4 +1,4 @@
-package com.example.template_code.ui.theme
+package com.example.DoctorYa.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
