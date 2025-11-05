@@ -166,69 +166,6 @@ Si deseas habilitar Firebase:
 # O ejecuta directamente desde Android Studio
 ```
 
-## 📁 Estructura del Proyecto
-
-```
-DoctorYa/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/example/DoctorYa/
-│   │   │   │   ├── data/
-│   │   │   │   │   ├── Local/
-│   │   │   │   │   │   ├── LocalDataSourceImpl.kt
-│   │   │   │   │   │   ├── userDao.kt
-│   │   │   │   │   │   └── userDatabase.kt
-│   │   │   │   │   ├── Remote/
-│   │   │   │   │   │   ├── apiClient.kt
-│   │   │   │   │   │   └── RemoteDataSourceImpl.kt
-│   │   │   │   │   ├── model/
-│   │   │   │   │   │   ├── userDto.kt
-│   │   │   │   │   │   └── userEntity.kt
-│   │   │   │   │   ├── LocalDataSource.kt
-│   │   │   │   │   ├── RemoteDataSource.kt
-│   │   │   │   │   └── Repository.kt
-│   │   │   │   ├── di/
-│   │   │   │   │   ├── localModule.kt
-│   │   │   │   │   └── remoteModule.kt
-│   │   │   │   ├── domain/
-│   │   │   │   │   ├── model/
-│   │   │   │   │   │   └── user.kt
-│   │   │   │   │   ├── GetUsersDb.kt
-│   │   │   │   │   ├── GetUsersUseCase.kt
-│   │   │   │   │   └── InsertUsersUseCase.kt
-│   │   │   │   ├── ui/
-│   │   │   │   │   ├── screens/
-│   │   │   │   │   │   ├── home/
-│   │   │   │   │   │   │   ├── Home.kt
-│   │   │   │   │   │   │   └── HomeViewModel.kt
-│   │   │   │   │   │   └── save/
-│   │   │   │   │   │       ├── Save.kt
-│   │   │   │   │   │       └── SaveViewModel.kt
-│   │   │   │   │   └── theme/
-│   │   │   │   │       ├── Color.kt
-│   │   │   │   │       ├── Theme.kt
-│   │   │   │   │       └── Type.kt
-│   │   │   │   ├── utils/
-│   │   │   │   │   ├── MainDispatcherRule.kt
-│   │   │   │   │   ├── Mapper.kt
-│   │   │   │   │   ├── Navigation.kt
-│   │   │   │   │   ├── Result.kt
-│   │   │   │   │   ├── retrofitHelper.kt
-│   │   │   │   │   └── UiState.kt
-│   │   │   │   ├── DoctorApp.kt
-│   │   │   │   └── MainActivity.kt
-│   │   │   ├── res/
-│   │   │   └── AndroidManifest.xml
-│   │   └── test/
-│   └── build.gradle.kts
-├── gradle/
-│   ├── libs.versions.toml
-│   └── wrapper/
-├── build.gradle.kts
-├── settings.gradle.kts
-└── README.md
-```
 
 ## 🧪 Testing
 
@@ -292,20 +229,12 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 
 ## 👨‍💻 Autor
 
-**Luis Hernandez** - [@luisiscander](https://github.com/luisiscander)
+**Luis Iscander** - [@luisiscander](https://github.com/luisiscander)
 
 ## 📞 Contacto
 
 Si tienes preguntas o sugerencias, no dudes en abrir un issue en el repositorio.
 
-## 🙏 Agradecimientos
-
-- [Android Developers](https://developer.android.com/)
-- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
-- [Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [Material Design](https://material.io/)
-
----
-
+#
 Hecho con ❤️ y ☕ por la comunidad de desarrolladores Android
 
