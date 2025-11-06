@@ -7,7 +7,7 @@
 
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_doctor</item>
 
-        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="windowSplashScreenAnimationDuration">500</item>
 
         <item name="postSplashScreenTheme">@style/Theme.TemplateCode</item>
 

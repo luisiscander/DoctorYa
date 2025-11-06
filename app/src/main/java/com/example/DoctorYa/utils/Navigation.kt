@@ -9,6 +9,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.example.DoctorYa.ui.screens.home.Home
+import com.example.DoctorYa.ui.screens.onboarding.OnBoardingScreen
 import com.example.DoctorYa.ui.screens.save.SaveScreen
 import kotlinx.serialization.Serializable
 
@@ -22,6 +23,8 @@ sealed interface Routes: NavKey{
     data class  Detail(val id:Int): Routes
     @Serializable
     data object Save: Routes
+    @Serializable
+    data object OnBoardingScreen : Routes
 
 
 }
@@ -30,16 +33,22 @@ sealed interface Routes: NavKey{
 @Composable
 fun Navigation(){
 
-    val backStack= rememberNavBackStack(Routes.Home)
+    val backStack= rememberNavBackStack(Routes.OnBoardingScreen)
 
     NavDisplay(
         backStack =backStack,
         entryDecorators = listOf(rememberSaveableStateHolderNavEntryDecorator(), rememberViewModelStoreNavEntryDecorator() ) ,
         entryProvider = entryProvider {
 
+
+
+            entry<Routes.OnBoardingScreen>{ OnBoardingScreen()  }
+
             entry<Routes.Home> { Home(){ backStack.add(Routes.Save)} }
 
             entry<Routes.Save>{  SaveScreen()  }
+
+
 
         })
 
