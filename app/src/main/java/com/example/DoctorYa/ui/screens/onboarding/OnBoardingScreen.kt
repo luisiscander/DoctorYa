@@ -37,7 +37,7 @@ import com.example.DoctorYa.ui.theme.primary
 
 
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(navigateTo: () -> Unit) {
     val dataList = getOnBoardingData()
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -101,7 +101,7 @@ fun OnBoardingScreen() {
             .weight(1f)) {
             AnimatedVisibility(pagerState.currentPage == dataList.size-1) {
 
-                OutlinedButton(onClick = {}, modifier = Modifier
+                OutlinedButton(onClick = {navigateTo()}, modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp)) {
 
@@ -118,9 +118,4 @@ fun OnBoardingScreen() {
     }
 
 
-}
-@Preview(showSystemUi = true)
-@Composable
-fun OnBoardingScreenPreview () {
-    OnBoardingScreen()
 }
