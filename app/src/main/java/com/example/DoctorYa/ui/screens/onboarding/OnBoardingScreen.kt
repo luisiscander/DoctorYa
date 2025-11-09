@@ -97,8 +97,10 @@ fun OnBoardingScreen(navigateTo: () -> Unit) {
 
 
         Row(modifier = Modifier
-            .fillMaxWidth()
-            .weight(1f)) {
+            .fillMaxWidth().padding(bottom = 16.dp)
+            .weight(1f))
+
+        {
             AnimatedVisibility(pagerState.currentPage == dataList.size-1) {
 
                 OutlinedButton(onClick = {navigateTo()}, modifier = Modifier

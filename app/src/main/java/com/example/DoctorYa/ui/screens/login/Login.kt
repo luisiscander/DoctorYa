@@ -1,5 +1,6 @@
 package com.example.DoctorYa.ui.screens.login
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,6 +16,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Password
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -43,7 +47,7 @@ import com.example.DoctorYa.ui.screens.components.Type
 fun Login() {
     var user by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    var visibility by remember { mutableStateOf(false)  }
+
 
     Column(
         modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
@@ -67,36 +71,46 @@ fun Login() {
         //body
         Column(modifier = Modifier
             .fillMaxSize()
-            .weight(2f), horizontalAlignment = Alignment.CenterHorizontally) {
-
-            CmpTextField(
-                type = Type.User,
-                value = user){user = it}
-
-            Spacer(modifier = Modifier.height(10.dp))
-
-            CmpTextField(
-                type = Type.Password,
-                value = password,
-
-                leading = { Icon(imageVector = Icons.Default.Password, contentDescription = "") },
-                trailing = {
-                    var icon=  if(visibility) Icons.Default.Visibility else Icons.Default.VisibilityOff
-
-                    Icon(imageVector = icon, contentDescription = "", modifier = Modifier.clickable{visibility=!visibility})
+            .weight(2f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center) {
 
 
-                    }) {password=it}
+            Card(modifier = Modifier.fillMaxSize(),
+                elevation = CardDefaults.cardElevation(2.dp),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                border = BorderStroke(width = 1.dp, color = Color.Transparent)
+                ) {
+                Column(modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                     verticalArrangement = Arrangement.Center){
+                    CmpTextField( type = Type.User, value = user,){user = it}
 
-            Spacer(modifier = Modifier.height(16.dp))
-            CmpButton(){}
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    CmpTextField(type = Type.Password, value = password,) {password=it}
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    CmpButton(){}
+                }
+
+            }
 
         }
 
         //footer
         Row(modifier = Modifier
             .fillMaxSize()
-            .weight(1f)) { }
+            .weight(1f),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically) {
+
+            Text(
+                "CopyRight@2025",
+                style = TextStyle(fontSize = 15.sp, fontWeight = FontWeight.Medium)
+            )
+        }
 
 
     }
