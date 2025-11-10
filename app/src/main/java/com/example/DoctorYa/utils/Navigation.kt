@@ -45,10 +45,11 @@ fun Navigation(){
 
             entry<Routes.OnBoardingScreen>{ OnBoardingScreen(){ backStack.add(Routes.Login)}  }
 
-            entry <Routes.Login>{ Login() }
+            entry <Routes.Login>{ Login(){backStack.add(Routes.Home)} }
 
 
             entry<Routes.Home> { Home(){ backStack.add(Routes.Save)} }
+
 
             entry<Routes.Save>{  SaveScreen()  }
 

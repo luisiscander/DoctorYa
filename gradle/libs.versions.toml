@@ -1,7 +1,6 @@
 [versions]
 agp = "8.10.0"
 kotlin = "2.2.0"
-#kotlin = "2.0.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -15,9 +14,13 @@ navigationcompose="2.9.2"
 iconExtended="1.6.0"
 retrofit="2.9.0"
 serialization="1.9.0"
+
+#firebase
 firebaseBom="34.0.0"
-datastore="1.1.7"
 googleServices = "4.4.3"
+
+datastore="1.1.7"
+
 hilt = "2.56.2"
 hilt-navigation = "1.2.0"
 ksp= "2.2.20-2.0.3"
@@ -32,6 +35,7 @@ junitJunit = "4.12"
 nav3Version = "1.0.0-alpha11"
 lifecycleViewmodelNav3 = "2.10.0-alpha05"
 kotlinxSerializationCore = "1.8.1"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -76,6 +80,13 @@ retrofit-gson={group= "com.squareup.retrofit2", name="converter-gson",version.re
 # Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-ai = { group = "com.google.firebase", name = "firebase-ai" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore" }
+firebase-storage= {module="com.google.firebase:firebase-storage"}
+#this is for coroutines with firebase
+firebase-coroutines= {module="org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version="1.7.3"}
+
+
 
 # DataStore
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
@@ -98,6 +109,7 @@ turbine= {module="app.cash.turbine:turbine", version.ref="turbine"}
 kotlin-coroutines= {module="org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref="kotlinCorrutines"}
 assertj = {module ="org.assertj:assertj-core", version.ref = "assertj"}
 junit-junit = { group = "junit", name = "junit", version.ref = "junitJunit" }
+
 
 
 

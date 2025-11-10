@@ -76,8 +76,7 @@ fun SaveScreen(viewModel: SaveViewModel = hiltViewModel())
 
                 }
 
-
-
+                UiState.Inactive -> {}
             }
 
 

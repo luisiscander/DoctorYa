@@ -45,6 +45,7 @@ enum class Type{
 @Composable
 fun CmpTextField (type: Type?=null,
                   value: String,
+                  isError: Boolean=false,
                   label: @Composable (()->Unit)?=null,
                   placeHolder: @Composable (()->Unit)?=null,
                   leadingIcon:@Composable (()->Unit)?=null,
@@ -61,6 +62,7 @@ fun CmpTextField (type: Type?=null,
     OutlinedTextField(onValueChange = {onChange(it)} ,
         value = value,
         singleLine = true,
+        isError = isError,
         keyboardOptions = keyboardOptions ?:
             KeyboardOptions(
             keyboardType = if (type== Type.User) KeyboardType.Email else KeyboardType.Password,
@@ -115,9 +117,11 @@ fun CmpTextField (type: Type?=null,
 
 
 @Composable
-fun CmpButton(onClick:()-> Unit) {
+fun CmpButton(enable: Boolean ?, onClick:()-> Unit) {
 
-    OutlinedButton(onClick = {onClick()}, modifier = Modifier
+    OutlinedButton(onClick = {onClick()},
+        enabled = enable?: true,
+        modifier = Modifier
         .fillMaxWidth()
         .padding(horizontal = 54.dp)) {
         Text("Login")

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "2356734909",
+    "project_id": "doctorya-3120d",
+    "storage_bucket": "doctorya-3120d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2356734909:android:0c6b4bcb2a74930b1880d4",
+        "android_client_info": {
+          "package_name": "com.example.template_code"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvBbFGvGDsdAtV1A5fY0IUT16nzyBbgI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,10 +4,12 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     //custom
     alias(libs.plugins.kotlin.serialization)
-    //alias(libs.plugins.google.services)
+    alias(libs.plugins.google.services)
     //hilt
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+
+
 
 }
 
@@ -66,6 +68,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.junit.junit)
+
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.junit)
@@ -91,6 +94,14 @@ dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.ai)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.coroutines)
+
+
+
+
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)
