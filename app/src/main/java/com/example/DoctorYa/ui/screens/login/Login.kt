@@ -42,6 +42,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 import com.example.DoctorYa.R
+import com.example.DoctorYa.data.model.userRequest
 import com.example.DoctorYa.ui.screens.components.CmpButton
 import com.example.DoctorYa.ui.screens.components.CmpTextField
 import com.example.DoctorYa.ui.screens.components.Type
@@ -117,7 +118,8 @@ Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                     Spacer(modifier = Modifier.height(16.dp))
 
                     CmpButton(enable = (uiState != UiState.Loading)){
-                        loginViewModel.signWithEmail(email = user, password = password)
+                        val auth= userRequest(email = user, password = password)
+                        loginViewModel.signWithEmail(auth)
 
                     }
                 }

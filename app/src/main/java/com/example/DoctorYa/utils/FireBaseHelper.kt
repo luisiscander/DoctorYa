@@ -1,10 +1,12 @@
 package com.example.DoctorYa.utils
 
 
+import com.example.DoctorYa.data.model.userRequest
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.tasks.await
@@ -25,8 +27,8 @@ class FirebaseHelper @Inject constructor() {
 
     fun signOut() = auth.signOut()
 
-    suspend fun signInWithEmail(email: String, password: String): AuthResult =
-        auth.signInWithEmailAndPassword(email, password).await()
+    suspend fun signInWithEmail(request: userRequest): AuthResult =
+        auth.signInWithEmailAndPassword(request.email, request.password).await()
 
     suspend fun signUpWithEmail(email: String, password: String): AuthResult =
         auth.createUserWithEmailAndPassword(email, password).await()

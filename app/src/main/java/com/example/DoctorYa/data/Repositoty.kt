@@ -8,6 +8,7 @@ import com.example.DoctorYa.utils.Result
 import com.example.DoctorYa.data.Remote.RemoteDataSourceImpl
 import com.example.DoctorYa.data.model.userDto
 import com.example.DoctorYa.data.model.userEntity
+import com.example.DoctorYa.data.model.userRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -20,7 +21,8 @@ import javax.inject.Named
 
 class Repository @Inject constructor(
     private val remoteDS: RemoteDataSource,
-    private val localDS: LocalDataSource
+    private val localDS: LocalDataSource,
+    private val firebase: FireBaseDataSource
 
 ) {
 
@@ -84,6 +86,8 @@ class Repository @Inject constructor(
 
 
     suspend fun clearDataBase() = withContext(Dispatchers.IO) { localDS.clearDB() }
+
+    suspend fun signWithEmail(request: userRequest) = firebase.getSignWithEmail(request = request)
 
 
 }
