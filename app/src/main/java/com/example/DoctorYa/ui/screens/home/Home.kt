@@ -117,6 +117,6 @@ fun Home(viewmodel: HomeViewModel = hiltViewModel(), navigateToSave: () -> Unit)
          }
      }
 
-         UiState.Inactive -> {}
+         UiState.Idle -> {}
 
      }}

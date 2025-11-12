@@ -1,14 +1,18 @@
 package com.example.DoctorYa.ui.screens.components
 
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Login
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -35,6 +39,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 
 
 enum class Type{
@@ -117,15 +123,20 @@ fun CmpTextField (type: Type?=null,
 
 
 @Composable
-fun CmpButton(enable: Boolean ?, onClick:()-> Unit) {
+fun CmpButton(enable: Boolean ?, @DrawableRes image: Int? =null, onClick:()-> Unit) {
 
     OutlinedButton(onClick = {onClick()},
         enabled = enable?: true,
+
         modifier = Modifier
-        .fillMaxWidth()
-        .padding(horizontal = 54.dp)) {
+            .fillMaxWidth()
+            .padding(horizontal = 70.dp)) {
+        if (image!=null){
+            Icon(painter = painterResource(image), contentDescription = "")
+            Spacer(modifier = Modifier.width(4.dp))
+        }
+
         Text("Login")
     }
 
 }
-

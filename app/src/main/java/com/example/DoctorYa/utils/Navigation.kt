@@ -8,11 +8,16 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
+import com.example.DoctorYa.data.model.userRequest
+import com.example.DoctorYa.domain.model.user
 import com.example.DoctorYa.ui.screens.home.Home
 import com.example.DoctorYa.ui.screens.login.Login
 import com.example.DoctorYa.ui.screens.onboarding.OnBoardingScreen
 import com.example.DoctorYa.ui.screens.save.SaveScreen
 import kotlinx.serialization.Serializable
+
+
+
 
 @Serializable
 sealed interface Routes: NavKey{

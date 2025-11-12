@@ -9,6 +9,7 @@ import com.example.DoctorYa.data.Remote.RemoteDataSourceImpl
 import com.example.DoctorYa.data.model.userDto
 import com.example.DoctorYa.data.model.userEntity
 import com.example.DoctorYa.data.model.userRequest
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -88,6 +89,8 @@ class Repository @Inject constructor(
     suspend fun clearDataBase() = withContext(Dispatchers.IO) { localDS.clearDB() }
 
     suspend fun signWithEmail(request: userRequest) = firebase.getSignWithEmail(request = request)
+
+    suspend fun signWithGoogle(account: GoogleSignInAccount) = firebase.getSignWthGoogle(account = account)
 
 
 }

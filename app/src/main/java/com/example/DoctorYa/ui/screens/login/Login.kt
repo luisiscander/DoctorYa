@@ -35,6 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -55,12 +56,25 @@ fun Login(loginViewModel: LoginViewModel= hiltViewModel(), navigateTo: ()-> Unit
     val uiState  by loginViewModel.loginState.collectAsStateWithLifecycle()
     var user by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    var isError = uiState is UiState.Error
+    val isError = uiState is UiState.Error
+
+
+    LaunchedEffect(uiState) {
+        if (uiState is UiState.Success){
+            navigateTo()
+            loginViewModel.resetState()
+
+        }
+    }
 
 
 
 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 
+
+    if (uiState is UiState.Loading) {
+        CircularProgressIndicator()
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
@@ -122,6 +136,14 @@ Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                         loginViewModel.signWithEmail(auth)
 
                     }
+                    Spacer(modifier = Modifier.height(6.dp))
+
+                    Text(text = "Or with ", textAlign = TextAlign.Center, style = TextStyle(
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold
+                    ))
+                    Spacer(modifier = Modifier.height(6.dp))
+                    CmpButton(enable = (uiState!= UiState.Loading), image = R.drawable.ic_google) {  }
                 }
 
             }
@@ -145,30 +167,9 @@ Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
     }
 
 
-    LaunchedEffect(uiState) {
-        if (uiState is UiState.Success){
-            navigateTo()
-            loginViewModel.resetState()
 
-        }
 
-    }
 
-    when(uiState) {
-        is UiState.Error -> {
-
-           isError=!isError
-        }
-        UiState.Loading -> {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                CircularProgressIndicator()
-            }
-        }
-        is UiState.Success -> {
-           }
-
-        UiState.Inactive -> {}
-    }
 
 
 }
