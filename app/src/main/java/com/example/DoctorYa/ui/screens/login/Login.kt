@@ -47,10 +47,10 @@ import com.example.DoctorYa.data.model.userRequest
 import com.example.DoctorYa.ui.screens.components.CmpButton
 import com.example.DoctorYa.ui.screens.components.CmpTextField
 import com.example.DoctorYa.ui.screens.components.Type
-import com.example.DoctorYa.utils.UiState
+import com.example.DoctorYa.utils.helpers.UiState
 
 @Composable
-fun Login(loginViewModel: LoginViewModel= hiltViewModel(), navigateTo: ()-> Unit) {
+fun LoginScreen(loginViewModel: LoginViewModel= hiltViewModel(), navigateTo: ()-> Unit) {
 
 
     val uiState  by loginViewModel.loginState.collectAsStateWithLifecycle()

@@ -1,6 +1,5 @@
-package com.example.DoctorYa.utils
+package com.example.DoctorYa.utils.testing
 
-import android.util.EventLogTags
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestDispatcher
@@ -9,7 +8,6 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
-
 
 @ExperimentalCoroutinesApi
 

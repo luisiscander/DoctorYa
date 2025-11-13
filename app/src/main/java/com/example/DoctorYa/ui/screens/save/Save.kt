@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.DoctorYa.domain.model.user
-import com.example.DoctorYa.utils.UiState
+import com.example.DoctorYa.utils.helpers.UiState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.geometry.isEmpty
 

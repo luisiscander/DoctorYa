@@ -1,4 +1,4 @@
-package com.example.DoctorYa.utils
+package com.example.DoctorYa.utils.helpers
 
 sealed class Result<T>( data: T? =null, message: String? = null) {
 

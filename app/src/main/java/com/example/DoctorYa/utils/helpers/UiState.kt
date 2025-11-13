@@ -1,5 +1,4 @@
-package com.example.DoctorYa.utils
-
+package com.example.DoctorYa.utils.helpers
 
 sealed interface UiState<out T>{
 

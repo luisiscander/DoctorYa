@@ -1,8 +1,8 @@
 package com.example.DoctorYa.data.Remote
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import com.example.DoctorYa.utils.retrofitHelper
-import com.example.DoctorYa.utils.Result
+import com.example.DoctorYa.utils.helpers.retrofitHelper
+import com.example.DoctorYa.utils.helpers.Result
 
 import com.example.DoctorYa.data.RemoteDataSource
 import com.example.DoctorYa.data.model.userDto

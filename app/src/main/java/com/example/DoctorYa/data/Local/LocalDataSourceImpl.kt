@@ -4,7 +4,7 @@ package com.example.DoctorYa.data.Local
 import com.example.DoctorYa.data.LocalDataSource
 import com.example.DoctorYa.data.model.userDto
 import com.example.DoctorYa.data.model.userEntity
-import com.example.DoctorYa.utils.Result
+import com.example.DoctorYa.utils.helpers.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -1,22 +1,18 @@
-package com.example.DoctorYa.ui.screens.home
+package com.example.DoctorYa.ui.screens.home2
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.DoctorYa.domain.GetUsersDb
-import com.example.DoctorYa.utils.Result
+import com.example.DoctorYa.utils.helpers.Result
 import com.example.DoctorYa.domain.GetUsersUseCase
 import com.example.DoctorYa.domain.model.user
-import com.example.DoctorYa.utils.UiState
+import com.example.DoctorYa.utils.helpers.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 

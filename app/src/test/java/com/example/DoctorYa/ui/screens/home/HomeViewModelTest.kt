@@ -3,9 +3,10 @@ package com.example.DoctorYa.ui.screens.home
 import app.cash.turbine.test
 import com.example.DoctorYa.domain.GetUsersUseCase
 import com.example.DoctorYa.domain.model.user
-import com.example.DoctorYa.utils.MainDispatcherRule
-import com.example.DoctorYa.utils.Result
-import com.example.DoctorYa.utils.UiState
+import com.example.DoctorYa.ui.screens.home2.HomeViewModel
+import com.example.DoctorYa.utils.testing.MainDispatcherRule
+import com.example.DoctorYa.utils.helpers.Result
+import com.example.DoctorYa.utils.helpers.UiState
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.emptyFlow

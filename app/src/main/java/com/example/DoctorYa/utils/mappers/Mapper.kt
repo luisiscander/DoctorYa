@@ -1,4 +1,4 @@
-package com.example.DoctorYa.utils
+package com.example.DoctorYa.utils.mappers
 
 import com.example.DoctorYa.data.model.userDto
 import com.example.DoctorYa.data.model.userEntity

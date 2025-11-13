@@ -4,7 +4,7 @@ import app.cash.turbine.test
 import com.example.DoctorYa.data.Repository
 
 import com.example.DoctorYa.domain.model.user
-import com.example.DoctorYa.utils.Result
+import com.example.DoctorYa.utils.helpers.Result
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

@@ -8,7 +8,7 @@ import com.example.DoctorYa.data.model.userRequest
 import com.example.DoctorYa.domain.SignWithEmailUseCase
 import com.example.DoctorYa.domain.SignWithGoogleUseCase
 
-import com.example.DoctorYa.utils.UiState
+import com.example.DoctorYa.utils.helpers.UiState
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -4,7 +4,7 @@ import com.example.DoctorYa.data.FireBaseDataSource
 import com.example.DoctorYa.data.firebase.FirebaseDataSourceImpl
 
 
-import com.example.DoctorYa.utils.FirebaseHelper
+import com.example.DoctorYa.utils.helpers.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module

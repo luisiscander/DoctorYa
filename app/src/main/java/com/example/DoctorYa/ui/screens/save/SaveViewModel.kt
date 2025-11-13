@@ -6,8 +6,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.DoctorYa.domain.GetUsersDb
 import com.example.DoctorYa.domain.GetUsersUseCase
 import com.example.DoctorYa.domain.model.user
-import com.example.DoctorYa.utils.Result
-import com.example.DoctorYa.utils.UiState
+import com.example.DoctorYa.utils.helpers.Result
+import com.example.DoctorYa.utils.helpers.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
