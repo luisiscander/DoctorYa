@@ -44,9 +44,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 import com.example.DoctorYa.R
 import com.example.DoctorYa.data.model.userRequest
-import com.example.DoctorYa.ui.screens.components.CmpButton
-import com.example.DoctorYa.ui.screens.components.CmpTextField
-import com.example.DoctorYa.ui.screens.components.Type
+import com.example.DoctorYa.ui.screens.login.components.TextFieldComponent
+import com.example.DoctorYa.ui.screens.login.components.ButtonComponent
+import com.example.DoctorYa.ui.screens.login.components.Type
 import com.example.DoctorYa.utils.helpers.UiState
 
 @Composable
@@ -123,15 +123,15 @@ Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                              )
                      }
 
-                    CmpTextField( type = Type.User, value = user, isError = isError){user = it}
+                    TextFieldComponent( type = Type.User, value = user, isError = isError){user = it}
 
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    CmpTextField(type = Type.Password, value = password, isError = isError) {password=it}
+                    TextFieldComponent(type = Type.Password, value = password, isError = isError) {password=it}
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    CmpButton(enable = (uiState != UiState.Loading)){
+                    ButtonComponent(enable = (uiState != UiState.Loading)){
                         val auth= userRequest(email = user, password = password)
                         loginViewModel.signWithEmail(auth)
 
@@ -143,7 +143,7 @@ Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                         fontWeight = FontWeight.Bold
                     ))
                     Spacer(modifier = Modifier.height(6.dp))
-                    CmpButton(enable = (uiState!= UiState.Loading), image = R.drawable.ic_google) {  }
+                    ButtonComponent(enable = (uiState!= UiState.Loading), image = R.drawable.ic_google) {  }
                 }
 
             }

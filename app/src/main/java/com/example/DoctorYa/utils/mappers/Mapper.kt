@@ -11,6 +11,18 @@ import com.example.DoctorYa.domain.model.user
     @SerializedName("email")  val email: String
 )
 */
+fun <T> List<T>.toDomain(mapper: (T)-> user):List<user>{
+
+   return this.map { mapper(it) }
+
+}
+
+
+fun  List<userDto>.toDomain():List<user>{
+    return  this.map { it.toDomain() }
+    }
+
+
 
 fun userDto.toDomain(): user{
 

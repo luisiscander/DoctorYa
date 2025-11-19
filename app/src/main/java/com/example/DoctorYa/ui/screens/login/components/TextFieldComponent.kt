@@ -1,4 +1,4 @@
-package com.example.DoctorYa.ui.screens.components
+package com.example.DoctorYa.ui.screens.login.components
 
 
 import androidx.annotation.DrawableRes
@@ -12,7 +12,6 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Login
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -28,7 +27,6 @@ import androidx.compose.runtime.setValue
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
-import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -40,7 +38,6 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 
 
 enum class Type{
@@ -49,7 +46,7 @@ enum class Type{
 }
 
 @Composable
-fun CmpTextField (type: Type?=null,
+fun TextFieldComponent (type: Type?=null,
                   value: String,
                   isError: Boolean=false,
                   label: @Composable (()->Unit)?=null,
@@ -122,21 +119,4 @@ fun CmpTextField (type: Type?=null,
 }
 
 
-@Composable
-fun CmpButton(enable: Boolean ?, @DrawableRes image: Int? =null, onClick:()-> Unit) {
 
-    OutlinedButton(onClick = {onClick()},
-        enabled = enable?: true,
-
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 70.dp)) {
-        if (image!=null){
-            Icon(painter = painterResource(image), contentDescription = "")
-            Spacer(modifier = Modifier.width(4.dp))
-        }
-
-        Text("Login")
-    }
-
-}

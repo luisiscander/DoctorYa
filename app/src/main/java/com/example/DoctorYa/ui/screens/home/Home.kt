@@ -1,5 +1,6 @@
 package com.example.DoctorYa.ui.screens.home
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -16,23 +17,28 @@ import com.example.DoctorYa.ui.screens.components.BottonBarComponent
 import com.example.DoctorYa.ui.screens.components.TopAppBarComponent
 import com.example.DoctorYa.utils.navigation.NavigationMenu
 import com.example.DoctorYa.utils.navigation.RouteMenu
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.navigation3.runtime.NavKey
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
 
-    var selected by remember { mutableStateOf(0) }
+   // var selected by remember { mutableStateOf(0) }
 
-    val backStack= rememberNavBackStack(RouteMenu.Profile)
-
+     val backStack= rememberNavBackStack(RouteMenu.Profile)
+     val currentRoute: NavKey? by remember( backStack){
+         derivedStateOf { backStack.lastOrNull() }
+     }
 
 
 
     Scaffold(
         topBar = {TopAppBarComponent(title = "DoctorYa")},
-        bottomBar = {BottonBarComponent(selected = selected, onClick = {route, index ->
+        bottomBar = {BottonBarComponent( currentRoute = currentRoute , onClick = {route ->
 
             backStack.add(route)
-            selected = index
+
 
         })},
         floatingActionButton = { }
@@ -40,7 +46,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
     ) { paddingValues ->
 
-        NavigationMenu(backStack = backStack)
+        NavigationMenu(backStack = backStack, modifier = Modifier.padding(paddingValues = paddingValues))
     }
 
 }

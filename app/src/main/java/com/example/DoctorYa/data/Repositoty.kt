@@ -34,10 +34,9 @@ class Repository @Inject constructor(
                 }
 
                 is Result.Success -> {
-                    //val r: List<userDto>? =result.data
-                    val data: List<user> =
-                        result.data?.map { userdto -> userdto.toDomain() } ?: emptyList()
-                    Result.Success(data = data)
+
+                    //val data: List<user> = result.data?.map { userdto -> userdto.toDomain() } ?: emptyList()
+                    Result.Success(data = result.data?.toDomain())
 
 
                 }

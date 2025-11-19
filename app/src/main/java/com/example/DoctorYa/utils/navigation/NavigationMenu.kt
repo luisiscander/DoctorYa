@@ -42,10 +42,12 @@ fun NavigationMenu(
    // val backStack = rememberNavBackStack(RouteMenu.Appointments)
 
     NavDisplay(
+        modifier = modifier,
         backStack = backStack,
         entryDecorators = listOf(
             rememberSaveableStateHolderNavEntryDecorator(),
             rememberViewModelStoreNavEntryDecorator()
+
         ),
         entryProvider = entryProvider{
 
@@ -58,5 +60,4 @@ fun NavigationMenu(
 
 
     )
-
 }
